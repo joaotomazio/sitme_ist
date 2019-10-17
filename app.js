@@ -1,8 +1,11 @@
 const express = require('express')
+const morgan = require('morgan')
 
 const app = express()
 const port = 3000
 
-app.use(require('./routes'))
+app.use(morgan('dev'))
 
-app.listen(port, () => console.log(`SitMeIST app listening on port ${port}!`))
+app.use('/', require('./routes'))
+
+app.listen(port, () => console.log(`SitMeIST app backend listening on port ${port}!`))
