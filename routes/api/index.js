@@ -32,7 +32,10 @@ app.get('/campi/:campus/buildings', async (req, res) => {
 
 app.get('/campi/:campus/buildings/:build/rooms/:room', async (req, res) => {
     try {
-        res.json(await controllers.getDay(req.params.room, req.query.day))
+        if(!req.query.day)
+            res.json(await controllers.getRoom(req.params.room))
+        else
+            res.json(await controllers.getDay(req.params.room, req.query.day))
     } catch(err){
         console.log(err)
         res.sendStatus(500)

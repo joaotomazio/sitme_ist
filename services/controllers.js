@@ -1,17 +1,21 @@
 const fenix = require('./fenix')
 
-module.exports.getCampi = async function(){
-    return await fenix.getSpace('')
+module.exports.getCampi = function(){
+    return fenix.getSpace('')
 }
 
-module.exports.getCampus = async function(campus){
-    return await fenix.getSpace(campus)
+module.exports.getCampus = function(campus){
+    return fenix.getSpace(campus)
 }
 
-module.exports.getBuildings = async function(campus){
-    return (await fenix.getSpace(campus)).containedSpaces
+module.exports.getBuildings = function(campus){
+    return fenix.getSpace(campus).containedSpaces
 }
 
-module.exports.getDay = async function(room, day){
-    return (await fenix.getSpace(id)).containedSpaces
+module.exports.getRoom = function(room){
+    return fenix.getSpace(room)
+}
+
+module.exports.getDay = function(room, day){
+    return fenix.getSpaceEvents(room, day).events
 }
