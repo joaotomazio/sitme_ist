@@ -13,6 +13,5 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: |
-    ping 8.8.8.8
+- script: curl google.pt
   displayName: 'Run a multi-line script'
