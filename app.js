@@ -8,4 +8,4 @@ app.use(morgan('dev'))
 
 app.use('/', require('./routes'))
 
-app.listen(port, () => console.log(`SitMeIST app backend listening on port ${port}!`))
+app.listen(port, () => console.log(`SitMeIST app listening on port ${port}!`))
